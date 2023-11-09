@@ -1,7 +1,7 @@
 
 cmake_minimum_required(VERSION 3.5)
 
-project (cpp11test LANGUAGES CXX)
+project (unittest LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_BUILD_TYPE Debug)
@@ -17,16 +17,20 @@ endif()
 
 link_directories(D:/devtools/googletest.1.12.0/debug/lib)
 
-aux_source_directory(src/NewFeature NewFeatureCPP)
+aux_source_directory(src/Feature FeatureCPP)
+aux_source_directory(src/Utils Utils)
 
 add_executable( ${PROJECT_NAME}
                 src/main.cpp
-                src/log4cplus_unittest.cc
-                src/gtest_unittest.cc
                 src/ThreadPool/ThreadPoolTest.cc
                 src/Singleton/SingletonTest.cc
-                ${NewFeatureCPP}
+                ${FeatureCPP}
+                ${Utils}
             )
+
+# if(MSVC)
+#     target_compile_options(${PROJECT_NAME} PUBLIC "/Zc:__cplusplus") // 这个设置会让__cplusplus值变为201402
+# endif()
 
 INCLUDE_DIRECTORIES(${log4cplus_INCLUDE_DIRS} D:/devtools/googletest.1.12.0/debug/include)
 TARGET_LINK_LIBRARIES(${PROJECT_NAME} PRIVATE log4cplus::log4cplusU gtest)

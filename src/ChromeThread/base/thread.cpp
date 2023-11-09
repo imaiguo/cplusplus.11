@@ -1,5 +1,5 @@
 #include "./thread.h"
-#include <Windows.h>  /*  TODO->unix²»ĞèÒª£¬ÓÃÌõ¼ş±àÒë   */
+#include <Windows.h>  /*  TODO->unixä¸éœ€è¦ï¼Œç”¨æ¡ä»¶ç¼–è¯‘   */
 
 namespace base {
 
@@ -18,7 +18,7 @@ namespace base {
         Init();
     }
 
-    /*  TODO->unix²»ĞèÒª£¬ÓÃÌõ¼ş±àÒë   */
+    /*  TODO->unixä¸éœ€è¦ï¼Œç”¨æ¡ä»¶ç¼–è¯‘   */
     Thread::ScopedCOMInitializer::ScopedCOMInitializer() {
         ::CoInitializeEx(NULL, COINIT_APARTMENTTHREADED);
     }

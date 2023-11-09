@@ -40,7 +40,7 @@ TEST(ThreadPool, runtest)
 	{
         results.emplace_back(
             pool.enqueue([i,j]{
-                std::this_thread::sleep_for(std::chrono::seconds(1));
+                std::this_thread::sleep_for(std::chrono::microseconds(10));
                 return i*j;
             })
         );

@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include <codecvt>
+#include <direct.h>
 
 #include "log4cplus/initializer.h"
 #include "log4cplus/logger.h"
@@ -29,7 +30,7 @@ log4cplus::tstring getBinPath(string strPath) {
 
 bool InitLog4cplus(string path){
     _mkdir("log");
-    cout<<"path:" <<path<<endl;
+    cout << "get cur exe path:" << path << endl;
     PropertyConfigurator::doConfigure(getBinPath(path));
     return true;
 }

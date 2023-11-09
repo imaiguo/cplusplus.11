@@ -17,9 +17,6 @@ class A {
 };
 thread_local int A::i = 0;
 
-
-
-
 void func() {
     for (;;) {
         int64_t i = (int64_t)TlsGetValue(slot_);

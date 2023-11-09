@@ -53,7 +53,5 @@ int main()
     }
 
     thread.Stop();
-
     return 0;
-
 }

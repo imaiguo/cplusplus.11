@@ -15,4 +15,12 @@ gtest库
 > set Path=D:\devtools\googletest.1.12.0\debug\bin;%Path%
 > set Path=D:\devtools\googletest.1.12.0\bin;%Path%
 ```
+
+
+
+## 运行测试
+```bash
+> .\unittest.exe
+> .\unittest.exe --gtest_filter=PODCLASS*
+> .\unittest.exe --gtest_filter=PODCLASS.IS_TRIVIALLY_COPYABLE
 ```
