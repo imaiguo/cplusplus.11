@@ -24,7 +24,7 @@ void ListInitialization()
 	A a = { 0 };
 
 	short si = 10;
-	__int64 i64{ si };
+	__int64_t i64{ si };
 
 	cout << i1 << endl;
 	cout << i2 << endl;

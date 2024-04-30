@@ -5,17 +5,15 @@
 
 using namespace std;
 
-auto func(int i) {
+int func(int i) {
     if (i > 0) {
         return i;
-    }
-    else {
+    } else {
         return 9;
     }
 }
 
-void AutoDecltype()
-{
+void AutoDecltype(){
     // auto代替类型
     auto i = func(5);
 

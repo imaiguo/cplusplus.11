@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <thread>
+#include <cstring>
 
 using namespace std;
 
@@ -42,8 +43,8 @@ RGB operator""_rgb(const char * v, size_t n) {
 
 void UserDefinedLiterals()
 {
-    std::this_thread::sleep_for(100ms);
-    // std::this_thread::sleep_for(std::chrono::milliseconds(100));
+    // std::this_thread::sleep_for(100ms);
+    std::this_thread::sleep_for(std::chrono::milliseconds(100));
 
     RGB lrgb = "25,255,55"_rgb;
 

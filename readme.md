@@ -11,6 +11,10 @@ googletest.1.12.0
 
 # Debian 12
 
+```bash
+> cmake -B build
+> cmake --build build
+```
 
 
 

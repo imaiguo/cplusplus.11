@@ -20,33 +20,33 @@ private:
     int m_i;
 };
 
-int func(int i) {
+int functionbind(int i) {
     cout << i << endl;
     return i;
 }
 
 // 绑定创建A对象,并调用方法A::func
-std::function<void(double)> obtain() {
-    return std::bind(&A::func, std::make_shared<A>(100), std::placeholders::_1);
-}
+// std::function<void(double)> obtain() {
+//     return std::bind(&A::func, std::make_shared<A>(100), std::placeholders::_1);
+// }
 
 void FuntionBind() {
 
     {
-        auto func = obtain();
-        func(100.5);
+        // auto func = obtain();
+        // func(100.5);
     }
 
     // 带参数绑定func
     {
-        std::function<int()> funcc = std::bind(&func, 101);
+        std::function<int()> funcc = std::bind(&functionbind, 101);
         int r = funcc();
         cout << r << endl;
     }
 
     // 不带参数绑定func
     {
-        std::function<void(int)> funcc = std::bind(&func, std::placeholders::_1);
+        std::function<void(int)> funcc = std::bind(&functionbind, std::placeholders::_1);
         funcc(101);
     }
 }

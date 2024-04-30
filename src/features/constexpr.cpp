@@ -6,7 +6,7 @@
 
 using namespace std;
 
-unsigned int func() {
+unsigned int constexprFunc() {
     default_random_engine e;
     return e();
 }
@@ -25,11 +25,11 @@ void constexprTest()
     }
 
     // 运行期间初始化后不能再赋值
-    const unsigned int b = func();
+    const unsigned int b = constexprFunc();
 
     {
         // 无法编译
-        // constexpr unsigned int b = func();
+        // constexpr unsigned int b = constexprFunc();
     }
 
     cout << b << endl;

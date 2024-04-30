@@ -9,10 +9,6 @@
 using namespace log4cplus;
 using namespace log4cplus::helpers;
 
-int random() {
-    return 2;
-}
-
 TEST(log4cpusTest, PrintLog){
     Logger logger = Logger::getRoot();
     int i = 10;
@@ -22,5 +18,5 @@ TEST(log4cpusTest, PrintLog){
     LOG4CPLUS_WARN(logger, "Writing warning messages to log...." << i);
     LOG4CPLUS_ERROR(logger, "ooooooh, there is an error....");
 
-    EXPECT_EQ(logger.getName(), L"root");
+    EXPECT_EQ(logger.getName(), "root");
 }

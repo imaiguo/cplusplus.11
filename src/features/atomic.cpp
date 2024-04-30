@@ -2,9 +2,9 @@
 
 #include <iostream>
 #include <atomic>
-#include <Windows.h>
+// #include <Windows.h>
 
-#include "gtest/gtest.h"
+#include <gtest/gtest.h>
 
 TEST(atomicTest, atomicTest){
     {
@@ -45,11 +45,13 @@ TEST(atomicTest, atomicTest){
 
     }
 
+#ifdef _WIN32
     {
         int a = 0;
         int b = 0;
         _ReadWriteBarrier(); // 内存栅栏
         int c = 0;
     }
+#endif
 
 }

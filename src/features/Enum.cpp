@@ -28,7 +28,7 @@ void EnumTest()
 {
     cout << A::WX << endl;
 
-    cout << (__int64)B::Type::WX << endl;
+    cout << (__int64_t)B::Type::WX << endl;
 
     cout << sizeof(B::Type::WX) << endl;
 

@@ -1,10 +1,9 @@
 ﻿
-#include "log4cplus/initializer.h"
-#include "Utils/log4cplusInit.h"
+#include <log4cplus/initializer.h>
+#include <gtest/gtest.h>
 
-#include "gtest/gtest.h"
-
-#include "./Utils/utils.h"
+#include "tools/log4cplusInit.h"
+#include "tools/utils.h"
 
 int add(int a, int b)
 {

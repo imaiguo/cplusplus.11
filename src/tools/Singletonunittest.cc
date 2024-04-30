@@ -1,9 +1,9 @@
 
 
 #include <iostream>
-#include "gtest/gtest.h"
+#include <gtest/gtest.h>
 
-#include "singleton.h"
+#include "Singleton.h"
 
 TEST(Singleton, SingletonTest){
 

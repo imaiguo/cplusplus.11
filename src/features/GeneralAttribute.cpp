@@ -6,10 +6,10 @@
 
 using namespace std;
 
-class __declspec(novtable) A {
-public:
-	virtual	void func() = 0;
-};
+// class __declspec(novtable) A {
+// public:
+// 	virtual	void func() = 0;
+// };
 
 // 函数不会返回
 [[noreturn]] void throwAway() {

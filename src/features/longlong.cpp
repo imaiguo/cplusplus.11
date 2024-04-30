@@ -9,7 +9,7 @@ void longlongTest()
     std::cout << sizeof(char) << std::endl;
     std::cout << sizeof(int) << std::endl;
     std::cout << sizeof(long long) << std::endl;
-    std::cout << sizeof(__int64) << std::endl;
+    std::cout << sizeof(__int64_t) << std::endl;
     std::cout << sizeof(void *) << std::endl;
 
     std::cout << LLONG_MIN << std::endl;

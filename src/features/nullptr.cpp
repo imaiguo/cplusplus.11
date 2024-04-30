@@ -5,18 +5,18 @@
 
 using namespace std;
 
-void func(int) {
+void nullptrFunc(int) {
     cout << "func(int)" << endl;
 }
 
-void func(char*) {
+void nullptrFunc(char*) {
     cout << "func(char*)" << endl;
 }
 
 void nullptrTest()
 {
-    func(NULL);
-    func((char*)NULL);
-    func(nullptr);
+    // func(NULL);
+    nullptrFunc((char*)NULL);
+    nullptrFunc(nullptr);
     cout << (nullptr == 0) << endl;
 }

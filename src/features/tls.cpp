@@ -3,12 +3,14 @@
 
 #include <iostream>
 #include <thread>
+
+#ifdef _WIN32
 #include <Windows.h>
+#endif
 
 using namespace std;
 namespace TlsTest{
 
-DWORD slot_ = TlsAlloc();
 
 class A {
     public:
@@ -16,6 +18,9 @@ class A {
         thread_local static int i;
 };
 thread_local int A::i = 0;
+
+#ifdef _WIN32
+DWORD slot_ = TlsAlloc();
 
 void func() {
     for (;;) {
@@ -26,6 +31,7 @@ void func() {
             break;
     }
 }
+#endif
 
 void func1() {
     for (;;) {
@@ -48,19 +54,21 @@ void func2() {
 void tlsTest()
 {
     // TlsGetValue和 TlsSetValue的使用
+#ifdef _WIN32
     {
         thread t1(func);
-        this_thread::sleep_for(500ms);
+        std::this_thread::sleep_for(std::chrono::microseconds(500));
         thread t2(func);
 
         t1.join();
         t2.join();
     }
+#endif
 
     // thread_local放在类中成员变量的使用
     {
         thread t1(func1);
-        this_thread::sleep_for(500ms);
+        std::this_thread::sleep_for(std::chrono::microseconds(500));
         thread t2(func1);
 
         t1.join();
@@ -70,7 +78,7 @@ void tlsTest()
     // thread_local放在函数局部变量的使用
     {
         thread t1(func2);
-        this_thread::sleep_for(500ms);
+        std::this_thread::sleep_for(std::chrono::microseconds(500));
         thread t2(func2);
 
         t1.join();
